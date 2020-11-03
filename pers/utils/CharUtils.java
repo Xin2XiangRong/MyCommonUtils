@@ -110,4 +110,17 @@ public class CharUtils {
     public static void main(String[] args) {
         System.out.println(isLetterAndChineseAndNum("发_顺丰iidd09"));
     }
+	
+	//判断是否简体  encode为GB2312
+	public static boolean isSimple(String str, String encode) {
+		try {
+			if (str.equals(new String(str.getBytes(encode), encode))) {
+				return true;
+			}else{
+				return false;
+			}
+		} catch (Exception e) {
+			return false;
+		}
+	}
 }
